@@ -3,11 +3,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
+import java.util.ArrayList;
 /**
  *
  * @author aniruddhasainkar
  */
 public class Citydirect {
-    
+    public ArrayList collectionOfCities;
+     public Citydirect(){
+         collectionOfCities=new ArrayList<City>();
+     }
+
+    public ArrayList getCollectionOfCities() {
+        return collectionOfCities;
+    }
+
+    public void setCollectionOfCities(ArrayList collectionOfCities) {
+        this.collectionOfCities = collectionOfCities;
+    }
+    public City addNewCity(){
+        City newCit=new City();
+        collectionOfCities .add(newCit);
+        return newCit;
+    }
+    public void deleteCity(int ed){
+       collectionOfCities .remove(ed); 
+    }
 }
