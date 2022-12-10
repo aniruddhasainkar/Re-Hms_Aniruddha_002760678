@@ -4,6 +4,18 @@
  */
 package ui;
 
+import javax.swing.InputVerifier;
+import javax.swing.JOptionPane;
+import model.Citydirect;
+import model.Doctordirect;
+import model.EncounterHistory;
+import model.HospDirectory;
+import model.MyNumericVerifier;
+import model.MyStringVerifier;
+import model.PatientDirect;
+import model.Person;
+import model.PersonDirect;
+
 /**
  *
  * @author aniruddhasainkar
@@ -13,8 +25,29 @@ public class LoginJFrame extends javax.swing.JFrame {
     /**
      * Creates new form LoginJFrame
      */
+    Citydirect storeOfCities;
+    PersonDirect storeOfPersons;
+    PatientDirect storeOfPatients;
+    Doctordirect storeOfDoctors;
+    HospDirectory storeOfHospitals;
+    EncounterHistory storeofEncounters;
+    Person User;
     public LoginJFrame() {
         initComponents();
+        storeOfCities=new Citydirect();
+        storeOfPersons=new PersonDirect();
+        storeOfPatients=new PatientDirect();
+        storeOfDoctors=new Doctordirect();
+        storeOfHospitals=new HospDirectory();
+        storeofEncounters=new EncounterHistory();
+       addVerifiers();
+        
+    }
+    private void addVerifiers() {
+         InputVerifier integerVerifier = new MyNumericVerifier();
+ 
+        InputVerifier stringVerifier = new MyStringVerifier();
+   txtPersonID.setInputVerifier(integerVerifier);
     }
 
     /**
@@ -119,6 +152,9 @@ public class LoginJFrame extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        
+        
+       
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
