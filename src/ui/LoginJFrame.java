@@ -152,7 +152,23 @@ public class LoginJFrame extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        
+        if(txtPersonID.getText().equals("")){
+             JOptionPane.showMessageDialog(this,"Some the data provided is null"); 
+           return;
+        }
+        long personID=Long.valueOf(txtPersonID.getText());
+        String password=txtPassword.getText();
+        boolean flag=false;
+        for(Person p : storeOfPersons.getInformation()){
+            if(p.getPersonID()==personID&&p.getPassword().equals(password)){
+                User=p;
+                flag=true;
+                MainJFrame MF=new MainJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+                MF.setVisible(true);
+            }
+            
+        }
+        if(flag==false)JOptionPane.showMessageDialog(this,"Either the PersonID or password is wrong");
         
        
     }//GEN-LAST:event_btnLoginActionPerformed

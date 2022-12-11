@@ -3,6 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ui;
+import javax.swing.JOptionPane;
+import model.Citydirect;
+import model.Doctordirect;
+import model.EncounterHistory;
+import model.HospDirectory;
+import model.PatientDirect;
+import model.Person;
+import model.PersonDirect;
 
 /**
  *
@@ -10,13 +18,38 @@ package ui;
  */
 // creation 
 public class MainJFrame extends javax.swing.JFrame {
+    Citydirect storeOfCities;
+    PersonDirect storeOfPersons;
+    PatientDirect storeOfPatients;
+    Doctordirect storeOfDoctors;
+    HospDirectory storeOfHospitals;
+    EncounterHistory storeofEncounters;
+    Person User;
 
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
+    public MainJFrame( Citydirect storeOfCities,
+    PersonDirect storeOfPersons,
+    PatientDirect storeOfPatients,
+    Doctordirect storeOfDoctors,
+    HospDirectory storeOfHospitals,
+    EncounterHistory storeofEncounters,Person User) {
+        initComponents();
+        this.storeOfCities=storeOfCities;
+        this.storeOfPersons=storeOfPersons;
+        this.storeOfPatients=storeOfPatients;
+        this.storeOfDoctors=storeOfDoctors;
+        this.storeOfHospitals=storeOfHospitals;
+        this.storeofEncounters=storeofEncounters;
+        this.User=User;
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -143,26 +176,62 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
         // TODO add your handling code here:
+        if(User.getPersonType()=="sysadmin"||User.getPersonType()=="hospitaladmin"||User.getPersonType()=="patient"){
+            PatientJFrame Pf=new PatientJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+                Pf.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"you do not have access to this ,Sorry");
+        }
         
     }//GEN-LAST:event_btnPatientActionPerformed
 
     private void btnHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalActionPerformed
         // TODO add your handling code here:
+        if(User.getPersonType()=="sysadmin"||User.getPersonType()=="hospitaladmin"){
+            HospJFrame Hosf=new HospJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+                Hosf.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"you do not have access to this ,Sorry");
+        }
        
     }//GEN-LAST:event_btnHospitalActionPerformed
 
     private void btnCommunityAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommunityAdminActionPerformed
         // TODO add your handling code here:
+        if(User.getPersonType()=="communityadmin"){
+        CommunityAdminJPanel cap=new CommunityAdminJPanel(storeOfCities);
+
+        jSplitPane1.setRightComponent(cap);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"you do not have access to this ,Sorry");
+        }
        
     }//GEN-LAST:event_btnCommunityAdminActionPerformed
 
     private void btnDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorActionPerformed
         // TODO add your handling code here:
+        if(User.getPersonType()=="sysadmin"||User.getPersonType()=="hospitaladmin"||User.getPersonType()=="patient"){
+            DoctorJFrame Pf=new DoctorJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+                Pf.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"you do not have access to this ,Sorry");
+        }
        
     }//GEN-LAST:event_btnDoctorActionPerformed
 
     private void btnEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncounterActionPerformed
         // TODO add your handling code here:
+        if(User.getPersonType()=="sysadmin"||User.getPersonType()=="hospitaladmin"||User.getPersonType()=="patient"||User.getPersonType()=="doctor"){
+            EncounterJFrame Pf=new EncounterJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+                Pf.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"you do not have access to this ,Sorry");
+        }
         
     }//GEN-LAST:event_btnEncounterActionPerformed
 
