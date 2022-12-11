@@ -14,47 +14,48 @@ public class Hospital {
     private long CommunityID;
     private String hospitalAddress;
 
-    public long getHospID() {
+    public long getHospitalID() {
         return hospitalID;
     }
 
-    public void setHospID(long hospID) {
-        this.hospitalID = hospID;
+    public void setHospitalID(long hospitalID) {
+        this.hospitalID = hospitalID;
     }
 
-    public String getHospName() {
+    public String getHospitalName() {
         return hospitalName;
     }
 
-    public void setHospName(String hospName) {
-        this.hospitalName = hospName;
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
 
-    public long getCommID() {
+    public long getCommunityID() {
         return CommunityID;
     }
 
-    public void setCommID(long CommID) {
-        this.CommunityID = CommID;
+    public void setCommunityID(long CommunityID) {
+        this.CommunityID = CommunityID;
     }
 
-    public String getHospAddress() {
+    public String getHospitalAddress() {
         return hospitalAddress;
     }
 
-    public void setHospAddress(String hospAddress) {
-        this.hospitalAddress = hospAddress;
+    public void setHospitalAddress(String hospitalAddress) {
+        this.hospitalAddress = hospitalAddress;
     }
-    public Hospital(long hospID, String hospName, long CommID, String hospAddress) {
-        this.hospitalID = hospID;
-        this.hospitalName = hospName;
-        this.CommunityID = CommID;
-        this.hospitalAddress = hospAddress;
+    public Hospital(long hospitalID, String hospitalName, long CommunityID, String hospitalAddress) {
+        this.hospitalID = hospitalID;
+        this.hospitalName = hospitalName;
+        this.CommunityID = CommunityID;
+        this.hospitalAddress = hospitalAddress;
     }
 
     @Override
     public String toString() {
-        return "Hosp{" + "hospID=" + hospitalID + ", hospName=" + hospitalName + ", CommID=" + CommunityID + ", hospAddress=" + hospitalAddress + '}';
+        return "Hospital{" + "hospitalID=" + hospitalID + ", hospitalName=" + hospitalName + ", CommunityID=" + CommunityID + ", hospitalAddress=" + hospitalAddress + '}';
     }
-    
+    public Hospital() {
+    }
 }

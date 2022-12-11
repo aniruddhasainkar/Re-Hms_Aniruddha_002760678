@@ -18,12 +18,12 @@ import model.PersonDirectory;
  */
 // creation 
 public class MainJFrame extends javax.swing.JFrame {
-    CityDirectory storeOfCities;
-    PersonDirectory storeOfPersons;
-    PatientDirectory storeOfPatients;
-    DoctorDirectory storeOfDoctors;
-    HospitalDirectory storeOfHospitals;
-    EncounterHistory storeofEncounters;
+    CityDirectory storageOfCities;
+    PersonDirectory storageOfPersons;
+    PatientDirectory storageOfPatients;
+    DoctorDirectory storageOfDoctors;
+    HospitalDirectory storageOfHospitals;
+    EncounterHistory storageofEncounters;
     Person User;
 
     /**
@@ -40,12 +40,12 @@ public class MainJFrame extends javax.swing.JFrame {
     HospitalDirectory storeOfHospitals,
     EncounterHistory storeofEncounters,Person User) {
         initComponents();
-        this.storeOfCities=storeOfCities;
-        this.storeOfPersons=storeOfPersons;
-        this.storeOfPatients=storeOfPatients;
-        this.storeOfDoctors=storeOfDoctors;
-        this.storeOfHospitals=storeOfHospitals;
-        this.storeofEncounters=storeofEncounters;
+        this.storageOfCities=storeOfCities;
+        this.storageOfPersons=storeOfPersons;
+        this.storageOfPatients=storeOfPatients;
+        this.storageOfDoctors=storeOfDoctors;
+        this.storageOfHospitals=storeOfHospitals;
+        this.storageofEncounters=storeofEncounters;
         this.User=User;
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
@@ -177,7 +177,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
         // TODO add your handling code here:
         if(User.getPersonType()=="sysadmin"||User.getPersonType()=="hospitaladmin"||User.getPersonType()=="patient"){
-            PatientJFrame Pf=new PatientJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+            PatientJFrame Pf=new PatientJFrame(storageOfCities,storageOfPersons,storageOfPatients,storageOfDoctors,storageOfHospitals,storageofEncounters,User);
                 Pf.setVisible(true);
         }
         else{
@@ -189,7 +189,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalActionPerformed
         // TODO add your handling code here:
         if(User.getPersonType()=="sysadmin"||User.getPersonType()=="hospitaladmin"){
-            HospJFrame Hosf=new HospJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+            HospitalFrame Hosf=new HospitalFrame(storageOfCities,storageOfPersons,storageOfPatients,storageOfDoctors,storageOfHospitals,storageofEncounters,User);
                 Hosf.setVisible(true);
         }
         else{
@@ -201,7 +201,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnCommunityAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommunityAdminActionPerformed
         // TODO add your handling code here:
         if(User.getPersonType()=="communityadmin"){
-        CommunityAdminJPanel cap=new CommunityAdminJPanel(storeOfCities);
+        CommunityAdminPanel cap=new CommunityAdminPanel(storageOfCities);
 
         jSplitPane1.setRightComponent(cap);
         }
@@ -214,7 +214,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorActionPerformed
         // TODO add your handling code here:
         if(User.getPersonType()=="sysadmin"||User.getPersonType()=="hospitaladmin"||User.getPersonType()=="patient"){
-            DoctorJFrame Pf=new DoctorJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+            DoctorFrame Pf=new DoctorFrame(storageOfCities,storageOfPersons,storageOfPatients,storageOfDoctors,storageOfHospitals,storageofEncounters,User);
                 Pf.setVisible(true);
         }
         else{
@@ -226,7 +226,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncounterActionPerformed
         // TODO add your handling code here:
         if(User.getPersonType()=="sysadmin"||User.getPersonType()=="hospitaladmin"||User.getPersonType()=="patient"||User.getPersonType()=="doctor"){
-            EncounterJFrame Pf=new EncounterJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
+            EncounterFrame Pf=new EncounterFrame(storageOfCities,storageOfPersons,storageOfPatients,storageOfDoctors,storageOfHospitals,storageofEncounters,User);
                 Pf.setVisible(true);
         }
         else{

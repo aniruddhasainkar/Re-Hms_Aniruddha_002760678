@@ -32,6 +32,10 @@ public class VitalSigns {
         this.PatientID = PatientID;
     }
 
+    public VitalSigns() {
+    }
+    
+
     public int getRespiratoryRate() {
         return respiratoryRate;
     }

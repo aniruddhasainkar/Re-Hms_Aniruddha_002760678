@@ -29,12 +29,12 @@ public class Doctor {
         this.HospitalID = HospitalID;
     }
 
-    public long getCommID() {
+    public long getCommunityID() {
         return CommunityID;
     }
 
-    public void setCommID(long CommID) {
-        this.CommunityID = CommID;
+    public void setCommunityID(long CommunityID) {
+        this.CommunityID = CommunityID;
     }
     public Doctor(Person person, long HospitalID, long CommunityID) {
         this.person = person;
@@ -44,6 +44,8 @@ public class Doctor {
     public Doctor(Person person, long HospitalID) {
         this.person = person;
         this.HospitalID = HospitalID;
+    }
+     public Doctor() {
     }
     
     

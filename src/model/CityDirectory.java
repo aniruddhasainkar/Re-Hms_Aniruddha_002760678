@@ -9,16 +9,15 @@ import java.util.ArrayList;
  * @author aniruddhasainkar
  */
 public class CityDirectory {
-    public ArrayList collectionOfCities;
+   public ArrayList collectionOfCities;
      public CityDirectory(){
          collectionOfCities=new ArrayList<City>();
      }
-
-    public ArrayList getCollectionOfCities() {
+       public ArrayList<City> getInformation() {
         return collectionOfCities;
     }
 
-    public void setCollectionOfCities(ArrayList collectionOfCities) {
+    public void setData(ArrayList<City> collectionOfCities) {
         this.collectionOfCities = collectionOfCities;
     }
     public City addNewCity(){

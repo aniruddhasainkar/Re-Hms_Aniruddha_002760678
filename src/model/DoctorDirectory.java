@@ -22,7 +22,7 @@ public class DoctorDirectory {
     }
     public Doctor addNewDoctor(){
         Doctor newDoctor =new Doctor();
-        boolean add = collectionOfDoctor .add(newDoctor);
+        collectionOfDoctor .add(newDoctor);
         return newDoctor;
     }
     public void deleteDoctor(int ed){

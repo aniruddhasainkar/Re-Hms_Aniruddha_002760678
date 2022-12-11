@@ -29,12 +29,12 @@ public class House {
         this.houseAddress = houseAddress;
     }
 
-    public long getCommID() {
+    public long getCommunityID() {
         return CommunityID;
     }
 
-    public void setCommID(long CommID) {
-        this.CommunityID = CommID;
+    public void setCommunityID(long CommunityID) {
+        this.CommunityID = CommunityID;
     }
      public House(long HouseID, String houseAddress, long CommunityID) {
         this.HouseID = HouseID;

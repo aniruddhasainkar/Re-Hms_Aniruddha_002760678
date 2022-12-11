@@ -25,21 +25,21 @@ public class LoginJFrame extends javax.swing.JFrame {
     /**
      * Creates new form LoginJFrame
      */
-    CityDirectory storeOfCities;
-    PersonDirectory storeOfPersons;
-    PatientDirectory storeOfPatients;
-    DoctorDirectory storeOfDoctors;
-    HospitalDirectory storeOfHospitals;
-    EncounterHistory storeofEncounters;
+    CityDirectory storageOfCities;
+    PersonDirectory storageOfPersons;
+    PatientDirectory storageOfPatients;
+    DoctorDirectory storageOfDoctors;
+    HospitalDirectory storageOfHospitals;
+    EncounterHistory storageofEncounters;
     Person User;
     public LoginJFrame() {
         initComponents();
-        storeOfCities=new CityDirectory();
-        storeOfPersons=new PersonDirectory();
-        storeOfPatients=new PatientDirectory();
-        storeOfDoctors=new DoctorDirectory();
-        storeOfHospitals=new HospitalDirectory();
-        storeofEncounters=new EncounterHistory();
+        storageOfCities=new CityDirectory();
+        storageOfPersons=new PersonDirectory();
+        storageOfPatients=new PatientDirectory();
+        storageOfDoctors=new DoctorDirectory();
+        storageOfHospitals=new HospitalDirectory();
+        storageofEncounters=new EncounterHistory();
        addVerifiers();
         
     }
@@ -159,12 +159,12 @@ public class LoginJFrame extends javax.swing.JFrame {
         long personID=Long.valueOf(txtPersonID.getText());
         String password=txtPassword.getText();
         boolean flag=false;
-        for(Person p : storeOfPersons.getInformation()){
+        for(Person p : storageOfPersons.getInformation()){
             if(p.getPersonID()==personID&&p.getPassword().equals(password)){
                 User=p;
                 flag=true;
-                MainJFrame MF=new MainJFrame(storeOfCities,storeOfPersons,storeOfPatients,storeOfDoctors,storeOfHospitals,storeofEncounters,User);
-                MF.setVisible(true);
+                MainJFrame Mf=new MainJFrame(storageOfCities,storageOfPersons,storageOfPatients,storageOfDoctors,storageOfHospitals,storageofEncounters,User);
+                Mf.setVisible(true);
             }
             
         }

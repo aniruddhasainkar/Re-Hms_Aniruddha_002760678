@@ -9,24 +9,24 @@ import java.util.ArrayList;
  * @author aniruddhasainkar
  */
 public class HospitalDirectory {
-    public ArrayList<Hospital> collectionOfHospital;
+    public ArrayList<Hospital> collectionOfHospitals;
      public HospitalDirectory(){
-         collectionOfHospital=new ArrayList<Hospital>();
+         collectionOfHospitals=new ArrayList<Hospital>();
      }
       public ArrayList<Hospital> getInformation() {
-        return collectionOfHospital;
+        return collectionOfHospitals;
     }
 
 
-    public void setData(ArrayList<Hospital> collectionOfHosp) {
-        this.collectionOfHospital = collectionOfHosp;
+    public void setData(ArrayList<Hospital> collectionOfHospitals) {
+        this.collectionOfHospitals = collectionOfHospitals;
     }
     public Hospital addNewHospital(){
         Hospital newHos=new Hospital();
-        collectionOfHospital.add(newHos);
+        collectionOfHospitals.add(newHos);
         return newHos;
     }
     public void deleteHos(int ed){
-       collectionOfHospital.remove(ed); 
+       collectionOfHospitals.remove(ed); 
     }
-}
+    }
