@@ -18,8 +18,8 @@ public class HospDirectory {
     }
 
 
-    public void setData(ArrayList<Hosp> collectionOfHospitals) {
-        this.collectionOfHosp = collectionOfHospitals;
+    public void setData(ArrayList<Hosp> collectionOfHosp) {
+        this.collectionOfHosp = collectionOfHosp;
     }
     public Hosp addNewHospital(){
         Hosp newHos=new Hosp();
