@@ -3,7 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ui;
-
+import javax.swing.InputVerifier;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.City;
+import model.CityDirectory;
+import model.MyNumericVerifier;
+import model.MyStringVerifier;
 /**
  *
  * @author aniruddhasainkar
@@ -13,9 +19,32 @@ public class CityCrudJFrame extends javax.swing.JFrame {
     /**
      * Creates new form CityCrudJFrame
      */
-    public CityCrudJFrame() {
+    CityDirectory storeOfCities;
+
+    public CityCrudJFrame(CityDirectory storeOfCities) {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        this.storeOfCities=storeOfCities;
+        addVerifiers();
+        populateTable();
     }
+    public CityCrudJFrame() {
+         
+        initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addVerifiers();
+        populateTable();
+        
+    }
+    private void addVerifiers() {
+
+        InputVerifier integerVerifier = new MyNumericVerifier();
+        txtCityID.setInputVerifier(integerVerifier);
+        InputVerifier stringVerifier = new MyStringVerifier();
+        txtCityName.setInputVerifier(stringVerifier);
+        txtStateName.setInputVerifier(stringVerifier);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,6 +91,11 @@ public class CityCrudJFrame extends javax.swing.JFrame {
         jLabel3.setText("State Name :");
 
         btnCreate.setText("Create");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
         btnView.setText("View");
 
@@ -131,6 +165,40 @@ public class CityCrudJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:if(txtCityID.getText().equals("")||txtCityID.getText().equals("")||txtStateName.getText().equals("")){
+           JOptionPane.showMessageDialog(this,"Some the data provided is null"); 
+           return;
+        }
+        long cityID=Long.valueOf(txtCitiesID.getText());
+        String cityName=txtCityName.getText();
+        String StateName=txtStateName.getText();
+        
+        boolean flag=false;
+        for(City c : storageOfCities.getInformation()){
+            if(cityID==c.getCityID()){
+                flag=true;
+                JOptionPane.showMessageDialog(this,"CityID is not unique");
+            }
+        }
+        if(flag==false){
+        City newCity=storageOfCities.addNewCity();
+        newCity.setCityID(cityID);
+        newCity.setCityName(cityName);
+        newCity.setStateName(StateName);
+        JOptionPane.showMessageDialog(this,"new city data added.");
+        }
+
+        txtCitiesID.setText("");
+        txtCityName.setText("");
+        txtStateName.setText("");
+        populateTable();
+
+    private void populateTable() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    }//GEN-LAST:event_btnCreateActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -180,4 +248,12 @@ public class CityCrudJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtCityName;
     private javax.swing.JTextField txtStateName;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void addVerifiers() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

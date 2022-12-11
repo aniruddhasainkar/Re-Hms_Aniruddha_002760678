@@ -11,7 +11,7 @@ package model;
 public class House {
     private long HouseID;
     private String houseAddress;
-    private long CommID;
+    private long CommunityID;
 
     public long getHouseID() {
         return HouseID;
@@ -30,16 +30,16 @@ public class House {
     }
 
     public long getCommID() {
-        return CommID;
+        return CommunityID;
     }
 
     public void setCommID(long CommID) {
-        this.CommID = CommID;
+        this.CommunityID = CommID;
     }
      public House(long HouseID, String houseAddress, long CommunityID) {
         this.HouseID = HouseID;
         this.houseAddress = houseAddress;
-        this.CommID = CommID;
+        this.CommunityID = CommunityID;
     }
     public House(){
     

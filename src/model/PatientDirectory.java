@@ -9,9 +9,9 @@ import java.util.ArrayList;
  *
  * @author aniruddhasainkar
  */
-public class PatientDirect {
+public class PatientDirectory {
     public ArrayList collectionOfPatient;
-            public PatientDirect(){
+            public PatientDirectory(){
          collectionOfPatient=new ArrayList<Patient>();
      }
        public ArrayList<Patient> getInformation() {

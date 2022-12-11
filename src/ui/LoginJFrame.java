@@ -6,15 +6,15 @@ package ui;
 
 import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
-import model.Citydirect;
-import model.Doctordirect;
+import model.CityDirectory;
+import model.DoctorDirectory;
 import model.EncounterHistory;
-import model.HospDirectory;
+import model.HospitalDirectory;
 import model.MyNumericVerifier;
 import model.MyStringVerifier;
-import model.PatientDirect;
+import model.PatientDirectory;
 import model.Person;
-import model.PersonDirect;
+import model.PersonDirectory;
 
 /**
  *
@@ -25,20 +25,20 @@ public class LoginJFrame extends javax.swing.JFrame {
     /**
      * Creates new form LoginJFrame
      */
-    Citydirect storeOfCities;
-    PersonDirect storeOfPersons;
-    PatientDirect storeOfPatients;
-    Doctordirect storeOfDoctors;
-    HospDirectory storeOfHospitals;
+    CityDirectory storeOfCities;
+    PersonDirectory storeOfPersons;
+    PatientDirectory storeOfPatients;
+    DoctorDirectory storeOfDoctors;
+    HospitalDirectory storeOfHospitals;
     EncounterHistory storeofEncounters;
     Person User;
     public LoginJFrame() {
         initComponents();
-        storeOfCities=new Citydirect();
-        storeOfPersons=new PersonDirect();
-        storeOfPatients=new PatientDirect();
-        storeOfDoctors=new Doctordirect();
-        storeOfHospitals=new HospDirectory();
+        storeOfCities=new CityDirectory();
+        storeOfPersons=new PersonDirectory();
+        storeOfPatients=new PatientDirectory();
+        storeOfDoctors=new DoctorDirectory();
+        storeOfHospitals=new HospitalDirectory();
         storeofEncounters=new EncounterHistory();
        addVerifiers();
         

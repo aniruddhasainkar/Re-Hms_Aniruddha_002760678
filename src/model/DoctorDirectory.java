@@ -8,9 +8,9 @@ import java.util.ArrayList;
  *
  * @author aniruddhasainkar
  */
-public class Doctordirect {
+public class DoctorDirectory {
     public ArrayList collectionOfDoctor;
-         public Doctordirect(){
+         public DoctorDirectory(){
          collectionOfDoctor=new ArrayList<Doctor>();
      }
        public ArrayList<Doctor> getInformation() {
@@ -22,7 +22,7 @@ public class Doctordirect {
     }
     public Doctor addNewDoctor(){
         Doctor newDoctor =new Doctor();
-        collectionOfDoctor .add(newDoctor);
+        boolean add = collectionOfDoctor .add(newDoctor);
         return newDoctor;
     }
     public void deleteDoctor(int ed){

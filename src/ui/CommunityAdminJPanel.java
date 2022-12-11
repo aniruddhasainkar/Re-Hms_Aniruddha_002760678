@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
+import model.CityDirectory;
 
 /**
  *
@@ -13,8 +14,10 @@ public class CommunityAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CommunityAdminJPanel
      */
-    public CommunityAdminJPanel() {
+    CityDirectory storeOfCities;
+    public CommunityAdminJPanel(CityDirectory storeOfCities) {
         initComponents();
+        this.storeOfCities=storeOfCities;
     }
 
     /**
@@ -41,8 +44,18 @@ public class CommunityAdminJPanel extends javax.swing.JPanel {
         });
 
         btnCommunity.setText("Create Community");
+        btnCommunity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommunityActionPerformed(evt);
+            }
+        });
 
         btnHouse.setText("Create House");
+        btnHouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHouseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
@@ -84,7 +97,21 @@ public class CommunityAdminJPanel extends javax.swing.JPanel {
 
     private void btnCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCityActionPerformed
         // TODO add your handling code here:
+        CityCrudJFrame cf=new CityCrudJFrame(storeOfCities);
+        cf.setVisible(true);
     }//GEN-LAST:event_btnCityActionPerformed
+
+    private void btnCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommunityActionPerformed
+        // TODO add your handling code here:
+        CommunityCrudJFrame cf=new CommunityCrudJFrame(storeOfCities);
+         cf.setVisible(true);
+    }//GEN-LAST:event_btnCommunityActionPerformed
+
+    private void btnHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHouseActionPerformed
+        // TODO add your handling code here:
+        HouseCrudJFrame hf=new HouseCrudJFrame(storeOfCities);
+         hf.setVisible(true);
+    }//GEN-LAST:event_btnHouseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,13 +4,13 @@
  */
 package ui;
 import javax.swing.JOptionPane;
-import model.Citydirect;
-import model.Doctordirect;
+import model.CityDirectory;
+import model.DoctorDirectory;
 import model.EncounterHistory;
-import model.HospDirectory;
-import model.PatientDirect;
+import model.HospitalDirectory;
+import model.PatientDirectory;
 import model.Person;
-import model.PersonDirect;
+import model.PersonDirectory;
 
 /**
  *
@@ -18,11 +18,11 @@ import model.PersonDirect;
  */
 // creation 
 public class MainJFrame extends javax.swing.JFrame {
-    Citydirect storeOfCities;
-    PersonDirect storeOfPersons;
-    PatientDirect storeOfPatients;
-    Doctordirect storeOfDoctors;
-    HospDirectory storeOfHospitals;
+    CityDirectory storeOfCities;
+    PersonDirectory storeOfPersons;
+    PatientDirectory storeOfPatients;
+    DoctorDirectory storeOfDoctors;
+    HospitalDirectory storeOfHospitals;
     EncounterHistory storeofEncounters;
     Person User;
 
@@ -33,11 +33,11 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
-    public MainJFrame( Citydirect storeOfCities,
-    PersonDirect storeOfPersons,
-    PatientDirect storeOfPatients,
-    Doctordirect storeOfDoctors,
-    HospDirectory storeOfHospitals,
+    public MainJFrame( CityDirectory storeOfCities,
+    PersonDirectory storeOfPersons,
+    PatientDirectory storeOfPatients,
+    DoctorDirectory storeOfDoctors,
+    HospitalDirectory storeOfHospitals,
     EncounterHistory storeofEncounters,Person User) {
         initComponents();
         this.storeOfCities=storeOfCities;

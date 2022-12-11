@@ -10,9 +10,9 @@ import java.util.ArrayList;
  *
  * @author aniruddhasainkar
  */
-public class PersonDirect {
+public class PersonDirectory {
     private ArrayList collectionOfPerson;
-            public PersonDirect(){
+            public PersonDirectory(){
          collectionOfPerson=new ArrayList<Person>();
          collectionOfPerson.add(new Person(1111,"sysadmin","admin@123","sysadmin",23,"Male",null));
          collectionOfPerson.add(new Person(1112,"hospitaladmin","admin@123","hospitaladmin",23,"Male",null));

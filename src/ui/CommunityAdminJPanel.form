@@ -77,11 +77,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Create Community"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommunityActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnHouse">
           <Properties>
             <Property name="text" type="java.lang.String" value="Create House"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHouseActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

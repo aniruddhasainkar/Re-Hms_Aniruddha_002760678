@@ -11,7 +11,7 @@ package model;
 public class Doctor {
     public Person person;
     private long HospitalID;
-    private long CommID;
+    private long CommunityID;
 
     public Person getPerson() {
         return person;
@@ -30,16 +30,16 @@ public class Doctor {
     }
 
     public long getCommID() {
-        return CommID;
+        return CommunityID;
     }
 
     public void setCommID(long CommID) {
-        this.CommID = CommID;
+        this.CommunityID = CommID;
     }
-    public Doctor(Person person, long HospitalID, long CommID) {
+    public Doctor(Person person, long HospitalID, long CommunityID) {
         this.person = person;
         this.HospitalID = HospitalID;
-        this.CommID = CommID;
+        this.CommunityID = CommunityID;
     }
     public Doctor(Person person, long HospitalID) {
         this.person = person;

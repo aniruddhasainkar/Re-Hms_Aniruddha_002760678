@@ -8,9 +8,9 @@ import java.util.ArrayList;
  *
  * @author aniruddhasainkar
  */
-public class Citydirect {
+public class CityDirectory {
     public ArrayList collectionOfCities;
-     public Citydirect(){
+     public CityDirectory(){
          collectionOfCities=new ArrayList<City>();
      }
 

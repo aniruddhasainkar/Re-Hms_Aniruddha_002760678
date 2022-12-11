@@ -10,17 +10,17 @@ import java.util.ArrayList;
  * @author aniruddhasainkar
  */
 public class Community {
-    private long commID;
+    private long communityID;
     private long cityID;
     private String communityName;
     public ArrayList<House> housesInCommunity;
 
     public long getCommunityID() {
-        return commID;
+        return communityID;
     }
 
     public void setCommunityID(long communityID) {
-        this.commID = communityID;
+        this.communityID = communityID;
     }
 
     public long getCityID() {
@@ -47,7 +47,7 @@ public class Community {
         this.housesInCommunity = housesInCommunity;
     }
     public Community(long communityID, long cityID, String communityName) {
-        this.commID = communityID;
+        this.communityID = communityID;
         this.cityID = cityID;
         this.communityName = communityName;
         housesInCommunity = new ArrayList<House>();
